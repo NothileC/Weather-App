@@ -29,7 +29,10 @@ const getWeather = (event) => {
 
 
   return (
-    <div className='container'>
+    
+    <div className='app'>
+      
+     
       <input className='input' 
       placeholder="Enter City..." 
       type="text"
@@ -51,8 +54,15 @@ const getWeather = (event) => {
 
         </div>
       )}
-     
-    </div>
+
+      {weatherData.cod === "404" ? (
+       <p>City not found.</p>
+      ) : (
+        <>
+        </>
+      )}
+     </div>
+   
   );
 };
 
