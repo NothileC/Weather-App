@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './index.css';
 
 
 
@@ -28,11 +28,9 @@ const getWeather = (event) => {
  
 
 
-  return (
-    
+  return <>
     <div className='app'>
-      
-     
+    
       <input className='input' 
       placeholder="Enter City..." 
       type="text"
@@ -40,10 +38,11 @@ const getWeather = (event) => {
       value={city}
       onKeyPress={getWeather} 
       />
+      
 
       {typeof weatherData.main === 'undefined' ? (
         <div>
-          <p>Welcome to Weather App! Enter in a city name to get the weather.</p>
+          <p></p>
         </div>
 
       ):(
@@ -61,9 +60,10 @@ const getWeather = (event) => {
         <>
         </>
       )}
+     
      </div>
    
-  );
+  </>
 };
 
 export default App;
