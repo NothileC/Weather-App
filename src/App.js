@@ -37,6 +37,20 @@ const getWeather = (event) => {
       value={city}
       onKeyPress={getWeather} 
       />
+
+      {typeof weatherData.main === 'undefined' ? (
+        <div>
+          <p>Welcome to Weather App! Enter in a city name to get the weather.</p>
+        </div>
+
+      ):(
+        <div className='weather-data'>
+          <p className='city'>{weatherData.name}</p>
+          <p className='temp'>{Math.round(weatherData.main.temp)}°F</p>
+          <p className='weather'>{weatherData.weather[0].main}</p>
+
+        </div>
+      )}
      
     </div>
   );
